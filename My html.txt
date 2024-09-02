@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ফ্রি ফায়ার কাস্টম ইউআইডি এবং পাসওয়ার্ড সংগ্রহ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>ফ্রি ফায়ার টুর্নামেন্ট</h1>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Registration Form -->
+        <div class="form-container" id="registrationForm">
+            <h2>রেজিস্ট্রেশন</h2>
+            <input type="text" id="name" placeholder="নাম" required>
+            <input type="email" id="email" placeholder="ইমেইল" required>
+            <input type="text" id="gameId" placeholder="ফ্রি ফায়ার আইডি" required>
+            <button onclick="registerUser()">রেজিস্টার করুন</button>
+        </div>
+
+        <!-- Registration Success Message -->
+        <div id="registrationSuccess" class="hidden">
+            <p class="success-message">রেজিস্ট্রেশন সফল হয়েছে! আপনি গেম মোড নির্বাচন করতে পারেন।</p>
+        </div>
+
+        <!-- Game Mode Selection -->
+        <div class="game-mode hidden" id="gameMode">
+            <button onclick="selectMode('squad')">স্কোয়াড (BR Rank)</button>
+            <button onclick="selectMode('solo')">সোলো (BR Rank)</button>
+        </div>
+
+        <!-- Code Entry Section -->
+        <div class="code-input-container hidden" id="codeEntry">
+            <h3>কোড লিখুন</h3>
+            <input type="text" id="codeInput" placeholder="আপনার কোড লিখুন" required>
+            <button onclick="checkCode()">সাবমিট করুন</button>
+            <div id="idPasswordDisplay" class="hidden">
+                <h4>আপনার আইডি এবং পাসওয়ার্ড:</h4>
+                <p id="idDisplay"></p>
+                <p id="passwordDisplay"></p>
+            </div>
+        </div>
+
+        <!-- Admin Panel (Only Accessible to You) -->
+        <div class="admin-panel" id="adminPanel">
+            <h3>অ্যাডমিন প্যানেল</h3>
+            <input type="text" id="adminCode" placeholder="কোড লিখুন" required>
+            <input type="text" id="adminId" placeholder="আইডি লিখুন" required>
+            <input type="text" id="adminPassword" placeholder="পাসওয়ার্ড লিখুন" required>
+            <button onclick="uploadCode()">কোড আপলোড করুন</button>
+            <input type="text" id="websiteName" placeholder="ওয়েবসাইটের নাম পরিবর্তন করুন">
+            <input type="file" id="uploadWallpaper" accept="image/*" placeholder="ওয়ালপেপার আপলোড করুন">
+            <button onclick="updateWebsite()">ওয়েবসাইট আপডেট করুন</button>
+        </div>
+
+        <!-- Ads Section -->
+        <div class="ads-section">
+            <h3>এখানে আপনার বিজ্ঞাপন দেখান</h3>
+            <p>আপনার বিজ্ঞাপনের জন্য জায়গা সংরক্ষণ করুন।</p>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; ২০২৪ ফ্রি ফায়ার টুর্নামেন্ট। সর্বস্বত্ব সংরক্ষিত।</p>
+    </footer>
+
+    <!-- JavaScript Code -->
+    <script src="scripts.js"></script>
+</body>
+</html>

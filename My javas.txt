@@ -1,0 +1,51 @@
+const codes = {};
+
+// Registration Function
+function registerUser() {
+    document.getElementById('registrationForm').classList.add('hidden');
+    document.getElementById('registrationSuccess').classList.remove('hidden');
+    setTimeout(() => {
+        document.getElementById('registrationSuccess').classList.add('hidden');
+        document.getElementById('gameMode').classList.remove('hidden');
+    }, 2000);
+}
+
+// Function to Select Game Mode
+function selectMode(mode) {
+    document.getElementById('gameMode').classList.add('hidden');
+    document.getElementById('codeEntry').classList.remove('hidden');
+}
+
+// Admin Function to Upload Code, ID, and Password
+function uploadCode() {
+    const code = document.getElementById('adminCode').value;
+    const id = document.getElementById('adminId').value;
+    const password = document.getElementById('adminPassword').value;
+
+    if (code && id && password) {
+        codes[code] = { id, password };
+        alert('কোড সফলভাবে আপলোড হয়েছে!');
+        document.getElementById('adminCode').value = '';
+        document.getElementById('adminId').value = '';
+        document.getElementById('adminPassword').value = '';
+    }
+}
+
+// Function to Check Code and Display ID and Password
+function checkCode() {
+    const code = document.getElementById('codeInput').value;
+
+    if (codes[code]) {
+        document.getElementById('idDisplay').innerText = `আইডি: ${codes[code].id}`;
+        document.getElementById('passwordDisplay').innerText = `পাসওয়ার্ড: ${codes[code].password}`;
+        document.getElementById('idPasswordDisplay').classList.remove('hidden');
+    } else {
+        alert('ভুল কোড প্রবেশ করেছেন!');
+    }
+}
+
+// Function to Update Website
+function updateWebsite() {
+    // Code to update the website settings, wallpaper, etc.
+    alert('ওয়েবসাইট সফলভাবে আপডেট হয়েছে!');
+}
